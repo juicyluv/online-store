@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/juicyluv/online-store/internal/domain/proto/user"
+	"github.com/juicyluv/online-store/internal/infrastructure/database"
 	userGrpc "github.com/juicyluv/online-store/internal/user/delivery/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -12,6 +13,7 @@ import (
 )
 
 type application struct {
+	db database.Database
 }
 
 func New() *application {
