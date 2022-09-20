@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package domain;
+
+option go_package = "internal/domain/proto/auth";
+
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+message SignInRequest {
+  string login = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+    description: "User login."
+  }];
+  string password = 2 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+    description: "User password."
+  }];
+}
+
+message SignInResponse {
+  string token = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+    description: "JWT token."
+  }];
+}

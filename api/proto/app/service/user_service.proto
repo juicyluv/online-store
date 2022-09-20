@@ -4,7 +4,7 @@ package service;
 
 option go_package = "internal/domain/proto/user";
 
-import "domain/user.proto";
+import "app/domain/user.proto";
 import "google/api/annotations.proto";
 
 service UserService {

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "internal/domain/proto/user";
+
+import "app/domain/auth.proto";
+import "google/api/annotations.proto";
+
+service AuthService {
+  rpc SignIn(domain.SignInRequest) returns (domain.SignInResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/sign-in"
+      body: "*"
+    };
+  }
+}
