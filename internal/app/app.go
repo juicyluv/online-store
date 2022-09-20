@@ -6,6 +6,7 @@ import (
 	"github.com/juicyluv/online-store/internal/domain/proto/user"
 	"github.com/juicyluv/online-store/internal/infrastructure/database"
 	userGrpc "github.com/juicyluv/online-store/internal/user/delivery/grpc"
+	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"net"
@@ -13,7 +14,8 @@ import (
 )
 
 type application struct {
-	db database.Database
+	db     database.Database
+	logger *zap.Logger
 }
 
 func New() *application {
