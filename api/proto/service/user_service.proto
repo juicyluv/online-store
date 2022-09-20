@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "internal/domain/proto/user";
+
+import "domain/user.proto";
+import "google/api/annotations.proto";
+
+service UserService {
+  rpc Test(domain.GetUserRequest) returns (domain.GetUserResponse) {
+    option (google.api.http) = {
+      get: "/api/test"
+    };
+  }
+}

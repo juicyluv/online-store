@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package domain;
+
+option go_package = "internal/domain/proto/user";
+
+message GetUserRequest {
+  string msg = 1;
+}
+
+message GetUserResponse {
+  string name = 1;
+}
